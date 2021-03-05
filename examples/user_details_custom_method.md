@@ -34,9 +34,7 @@ export default class App extends React.Component {
     getUserDetails = (rowRecord) => {
         var promise = axios.get("https://api.github.com/users/" + rowRecord.login)
         return promise
-        /*
-        component call promise.then(rsp => internalSaveDetails(rsp.data))
-        *
+        // component call promise.then(rsp => internalSaveDetails(rsp.data))
     }
 }
 ```

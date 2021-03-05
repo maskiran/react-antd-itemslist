@@ -1,6 +1,6 @@
 {
     "name": "react-antd-itemslist",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "description": "react ant table to load remote data, show default buttons, add, edit, delete with custom methods",
     "main": "dist/bundle.js",
     "scripts": {

@@ -41,6 +41,7 @@ Here is the list of examples provided in this document
 1. [List Users - Show delete at row](list_users_show_delete_at_row.md)
 1. [List Users - Default Pagination Handler](list_users_default_pagination_handler.md)
 1. [List Users - Default Search Handler](list_users_default_search_handler.md)
+1. [List Users - Full example with Default Search and Pagination Handler](list_users_default_search_pagination.md)
 1. [List Users - Custom Search Handler](list_users_custom_search_handler.md)
 1. [List Users - Custom Pagination Handler](list_users_custom_pagination_handler.md)
 1. [User Details](user_details.md)

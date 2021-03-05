@@ -72,6 +72,7 @@ export default class ItemsList extends React.Component {
         }
         if (reloadRequired) {
             this.searchParams = this.getSearchParams()
+            this.setState({searchValue: this.searchParams.searchValue})
             this.getItems()
         }
     }

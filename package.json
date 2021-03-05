@@ -1,0 +1,44 @@
+{
+    "name": "react-antd-itemslist",
+    "version": "1.0.4",
+    "description": "react ant table to load remote data, show default buttons, add, edit, delete with custom methods",
+    "main": "dist/bundle.js",
+    "scripts": {
+        "build": "rm -rf dist && rollup -c"
+    },
+    "author": "Kiran Madabhushi",
+    "license": "MIT",
+    "repository": "maskiran/react-antd-itemslist",
+    "dependencies": {
+        "@ant-design/icons": "^4.5.0",
+        "axios": "^0.21.1",
+        "react-json-view": "^1.21.1",
+        "query-string": "^6.14.1"
+    },
+    "peerDependencies": {
+        "antd": "^4.12.3",
+        "lodash": "^4.17.21",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.3",
+        "react-dom": "^16.13.3"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.13.1",
+        "@babel/plugin-proposal-class-properties": "^7.13.0",
+        "@babel/preset-env": "^7.13.5",
+        "@babel/preset-react": "^7.12.13",
+        "@rollup/plugin-babel": "^5.3.0",
+        "postcss": "^8.2.6",
+        "rollup": "^2.39.1",
+        "rollup-plugin-exclude-dependencies-from-bundle": "^1.1.17",
+        "rollup-plugin-postcss": "^4.0.0"
+    },
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "remote data",
+        "table actions",
+        "react antd table list"
+    ]
+}

@@ -72,7 +72,7 @@ export default class ItemsList extends React.Component {
         }
         if (reloadRequired) {
             this.searchParams = this.getSearchParams()
-            this.setState({searchValue: this.searchParams.searchValue})
+            this.setState({ searchValue: this.searchParams.searchValue })
             this.getItems()
         }
     }
@@ -144,7 +144,7 @@ export default class ItemsList extends React.Component {
 
     renderDefaultTableActions = () => {
         return (
-            <Row style={{ marginBottom: "16px" }} align="middle">
+            <Row style={{ marginBottom: "16px" }} align="middle" className="table-actions">
                 <Col span={this.props.actionButtonsSpan}>
                     {this.renderDefaultTableActionsButtons()}
                 </Col>
@@ -159,36 +159,42 @@ export default class ItemsList extends React.Component {
         if (this.props.actionButtonsSpan === 0) {
             return null
         }
-        return <span className="table-action-buttons">
+        return <Row gutter={8} className="table-action-buttons">
             {/* to align from the right style={{ justifyContent: "flex-end", display: "flex" }} */}
             {this.props.addButtonTitle !== false &&
-                <Button type="primary"
-                    disabled={!this.props.addButtonAction && !this.props.editor}
-                    onClick={this.props.addButtonAction || this.prepareToAddItem}
-                    icon={<PlusOutlined />}>
-                    {this.props.addButtonTitle}
-                </Button>
+                <Col>
+                    <Button type="primary"
+                        disabled={!this.props.addButtonAction && !this.props.editor}
+                        onClick={this.props.addButtonAction || this.prepareToAddItem}
+                        icon={<PlusOutlined />}>
+                        {this.props.addButtonTitle}
+                    </Button>
+                </Col>
             }
             {this.props.deleteButtonTitle !== false &&
-                <Popconfirm
-                    title="Delete selected items? "
-                    onConfirm={this.deleteSelectedItems}
-                    okText="Yes"
-                    cancelText="No">
-                    <Button type="danger"
-                        icon={<DeleteOutlined />}
-                        disabled={!this.state.selectedRows.length}>
-                        {this.props.deleteButtonTitle}
-                    </Button>
-                </Popconfirm>
+                <Col>
+                    <Popconfirm
+                        title="Delete selected items? "
+                        onConfirm={this.deleteSelectedItems}
+                        okText="Yes"
+                        cancelText="No">
+                        <Button type="danger"
+                            icon={<DeleteOutlined />}
+                            disabled={!this.state.selectedRows.length}>
+                            {this.props.deleteButtonTitle}
+                        </Button>
+                    </Popconfirm>
+                </Col>
             }
             {this.props.reloadButtonTitle !== false &&
-                <Button
-                    onClick={this.getItems} icon={<ReloadOutlined />}>
-                    {this.props.reloadButtonTitle}
-                </Button>
+                <Col>
+                    <Button
+                        onClick={this.getItems} icon={<ReloadOutlined />}>
+                        {this.props.reloadButtonTitle}
+                    </Button>
+                </Col>
             }
-        </span>
+        </Row>
     }
 
     renderDefaultTableActionsSearch = () => {
@@ -390,7 +396,7 @@ export default class ItemsList extends React.Component {
             }
             colCkBoxes.push(<Descriptions.Item label={colLabel} key={idx} >{tmpCols}</Descriptions.Item>)
         })
-        return <Descriptions bordered size="small" column={1} className="description-label-fit">
+        return <Descriptions bordered size="small" column={1} className="label-fit">
             {colCkBoxes}
         </Descriptions>
     }

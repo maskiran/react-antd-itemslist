@@ -1,7 +1,3 @@
-.table-action-buttons > :not(:first-child) {
-    margin-left: 10px;                                                   
-}
-
 td.view-link {
     cursor: pointer;
     color: #1890ff;
@@ -12,7 +8,7 @@ td.view-link {
 }
 
 /* fit the table column without wrap and expand only to the required width */
-.td-fit, .description-label-fit table th, .description-item-fit table td {
+.td-fit, .label-fit table th {
     width: 1px;
     white-space: nowrap;
 }

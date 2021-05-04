@@ -1,6 +1,6 @@
 {
     "name": "react-antd-itemslist",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "react ant table to load remote data, show default buttons, add, edit, delete with custom methods",
     "main": "dist/bundle.js",
     "scripts": {
@@ -19,8 +19,8 @@
         "antd": "^4.12.3",
         "lodash": "^4.17.21",
         "prop-types": "^15.7.2",
-        "react": "^16.13.3",
-        "react-dom": "^16.13.3"
+        "react": ">=16.13.3",
+        "react-dom": ">=16.13.3"
     },
     "devDependencies": {
         "@babel/core": "^7.13.1",

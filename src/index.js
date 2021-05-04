@@ -705,7 +705,6 @@ export default class ItemsList extends React.Component {
             var data;
             if (this.props.reformatListDataMethod) {
                 // method is supposed to return an object with count: number and items: [list]
-                console.log(rsp)
                 data = this.props.reformatListDataMethod(rsp.data, rsp.headers)
             } else {
                 /* default handler
@@ -806,7 +805,7 @@ export default class ItemsList extends React.Component {
             url is updated with values only if its not default, otherwise just null it out.
             the component just changes the url as a default handler. the url change
             would trigger a route change on the parent and this component either gets
-            reloaded or would go through render and componentUpdate would pick up the 
+            reloaded or would go through render and componentUpdate would pick up the
             updates and then gets items
             */
             this.changeBrowserUrl({
@@ -826,7 +825,7 @@ export default class ItemsList extends React.Component {
             reset page on a new search
             the component just changes the url as a default handler. the url change
             would trigger a route change on the parent and this component either gets
-            reloaded or would go through render and componentUpdate would pick up the 
+            reloaded or would go through render and componentUpdate would pick up the
             updates and then gets items
             */
             this.changeBrowserUrl({
@@ -977,25 +976,25 @@ ItemsList.propTypes = {
      * custom itemsListMethod defined */
     itemsListUrl: PropTypes.string,
 
-    /** Base URL (that is sufficed with dataKey) used for an 
-     * item get, delete, update. 
-     * It's only used if you want this component to get, delete or 
+    /** Base URL (that is sufficed with dataKey) used for an
+     * item get, delete, update.
+     * It's only used if you want this component to get, delete or
      * update item */
     itemBaseUrl: PropTypes.string,
 
-    /** Custom function called to get list of items, 
+    /** Custom function called to get list of items,
      * default axios.get(itemsListUrl) */
     itemsListMethod: PropTypes.func,
 
-    /** Custom function called to get an item: itemGetMethod(rowData) 
+    /** Custom function called to get an item: itemGetMethod(rowData)
      * Default is axios.get(itemBaseUrl + key) */
     itemGetMethod: PropTypes.func,
 
-    /** Custom function called to add an item: itemAddmethod(values)  
+    /** Custom function called to add an item: itemAddmethod(values)
      * Default is axios.post(itemAddUrl, values) */
     itemAddMethod: PropTypes.func,
 
-    /** Custom function called to edit an item: itemEditmethod(values)  
+    /** Custom function called to edit an item: itemEditmethod(values)
      * Default is axios.put(itemBaseUrl + key, values) */
     itemEditMethod: PropTypes.func,
 
@@ -1003,18 +1002,18 @@ ItemsList.propTypes = {
      * Default is axios.delete(itemBaseUrl+key) */
     itemDeleteMethod: PropTypes.func,
 
-    /** Custom function called to delete multiple records: 
+    /** Custom function called to delete multiple records:
      * itemsDeleteMethod([list of rowData])
      * Default is to delete each record individually (check itemDeleteMethod) */
     itemsDeleteMethod: PropTypes.func,
 
     /** Custom function that changes/formats the response after
-     * getting the items list. This may be used to delete certain fields or 
+     * getting the items list. This may be used to delete certain fields or
      * add more fields or format the response acceptable by this component.
      * function(rspData, rspHeaders)
      * The function should return an object with the following properties:
      * {
-     * count: <total number of items available>, 
+     * count: <total number of items available>,
      * items: [list of items]
      * } */
     reformatListDataMethod: PropTypes.func,
@@ -1053,7 +1052,7 @@ ItemsList.propTypes = {
     /** viewer modal/drawer width, default 40% */
     itemViewerWidth: PropTypes.string,
 
-    /** custom function that takes the record and returns a ReactNode 
+    /** custom function that takes the record and returns a ReactNode
      * for display in the itemViewerView (drawer or modal) by converting
      * data to table, header etc.
      * default render the JSON record content */
@@ -1124,11 +1123,11 @@ ItemsList.propTypes = {
 
     /** value of the search field. if the default handler (updating browser url)
      * is used, then this value is read from the url. this is used only when a custom
-     * handler onSearchChange is used 
+     * handler onSearchChange is used
     */
     searchValue: PropTypes.string,
 
-    /** for the default search handler (updates the browser url), use this 
+    /** for the default search handler (updates the browser url), use this
      * parameter as the search arg, default "search"
      */
     searchUrlParameter: PropTypes.string,
@@ -1139,7 +1138,7 @@ ItemsList.propTypes = {
 
     /** current page number for the pagination. if the default handler (updating browser url)
      * is used for pager change, then this value is read from the url from "pageUrlParameter"
-     * this is used only when a custom handler onSearchChange is used 
+     * this is used only when a custom handler onSearchChange is used
     */
     page: PropTypes.oneOfType([
         PropTypes.string,
@@ -1148,7 +1147,7 @@ ItemsList.propTypes = {
 
     /** page_size for the pagination. if the default handler (updating browser url)
      * is used for pager change, then this value is read from the url from "pageSizeUrlParameter"
-     * this is used only when a custom handler onSearchChange is used 
+     * this is used only when a custom handler onSearchChange is used
     */
     pageSize: PropTypes.oneOfType([
         PropTypes.string,
@@ -1161,12 +1160,12 @@ ItemsList.propTypes = {
         PropTypes.number
     ]),
 
-    /** for the default pagination handler (updates the browser url), use this 
+    /** for the default pagination handler (updates the browser url), use this
       * parameter as the page arg, default "page"
       */
     pageUrlParameter: PropTypes.string,
 
-    /** for the default search handler (updates the browser url), use this 
+    /** for the default search handler (updates the browser url), use this
      * parameter as the page size arg, default "page_size"
      */
     pageSizeUrlParameter: PropTypes.string,
